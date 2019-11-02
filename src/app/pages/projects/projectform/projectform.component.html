@@ -1,0 +1,38 @@
+<div id="pro-form">
+<h3>Project Details Form</h3>
+<hr>
+<form >
+  <div class="form-group">
+    <label for="projectid">Project Id</label>
+    <input type="text" class="form-control"  placeholder="Enter Project ID" [(ngModel)]="projectid" name="projectid"
+    [disabled]="buttonname=='update Project'">
+  </div>
+  <div class="form-group">
+    <label for="projecttitle">Project Title</label>
+    <input type="text" class="form-control"  placeholder="Enter Project title" [(ngModel)]="projecttitle" name="projecttitle">
+  </div>
+
+  <div class="form-group">
+    <label for="teamsize">Team Size</label>
+    <input type="text" class="form-control"  placeholder="Team size in number" [(ngModel)]="teamsize" name="teamsize">
+  </div>
+
+  <div class="form-group">
+    <label for="duration">Duration</label>
+    <input type="text" class="form-control"  placeholder="Duration in hours/days/months" [(ngModel)]="duration" name="duration">
+  </div>
+
+  <div class="form-group" >
+    <label for="coretech">Core  Technology</label>
+    <input type="text"  class="form-control"  [(ngModel)]="coretech" name="coretech">
+  </div>
+
+  <button  class="btn btn-dark" (click)="btnEvent()">{{buttonname}}</button>
+</form>
+<div *ngIf="errors.length>0" 
+  [ngStyle]="{'border':'2px solid darkblue','color':'gray','margin':'10px'}">
+      <ul>
+         <li *ngFor="let x of errors">{{x}}</li>
+      </ul>
+</div>
+</div>

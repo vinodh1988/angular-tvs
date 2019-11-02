@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms'
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
+import { AgGridModule } from 'ag-grid-angular';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +16,15 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { LocationComponent } from './pages/home/location/location.component';
 import { RatedPipe } from './pipes/rated.pipe';
 import { ProductivityPipe } from './pipes/productivity.pipe';
+import { ProjectformComponent } from './pages/projects/projectform/projectform.component';
+import { CrudmenuComponent } from './common/crudmenu/crudmenu.component';
+import { CategoryService, LegendService, TooltipService } from '@syncfusion/ej2-angular-charts';
+import { DataLabelService, LineSeriesService} from '@syncfusion/ej2-angular-charts';
+import { FirstchartComponent } from './pages/visualization/firstchart/firstchart.component';
+import { ProductchartComponent } from './pages/visualization/productchart/productchart.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { FileSelectDirective } from 'ng2-file-upload';
+
 
 @NgModule({
   declarations: [
@@ -25,15 +37,25 @@ import { ProductivityPipe } from './pipes/productivity.pipe';
     ProjectsComponent,
     LocationComponent,
     RatedPipe,
-    ProductivityPipe
+    ProductivityPipe,
+    ProjectformComponent,
+    CrudmenuComponent,
+    FirstchartComponent,
+    ProductchartComponent,
+    HighlightDirective,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MenuModule,
+    ChartModule,
+    AgGridModule.withComponents([]),
+    ReactiveFormsModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClient,CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

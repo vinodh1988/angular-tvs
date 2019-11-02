@@ -1,4 +1,4 @@
-
+<app-projectform (newitem)="ngOnInit()"></app-projectform>
 <h1 [style.color]="'darkblue'">Project details</h1>
 
 <table class="table table-hover table-striped">
@@ -10,8 +10,8 @@
        <th>Core Technology</th>
    </thead>
    <tbody>
-       <tr *ngFor="let x of projects">
-            <td>{{x.projectid}}</td>
+       <tr *ngFor="let x of projects" [highlight]="x.teamsize" >
+            <td><a routerLink="/projects/{{x.projectid}}">{{x.projectid}}</a></td>
             <td>{{x.projecttitle}}</td>
             <td>{{x.teamsize}}</td>
             <td>{{x.duration}}</td>

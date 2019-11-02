@@ -1,0 +1,9 @@
+`<ejs-chart id="chart-container2" [primaryXAxis]='primaryXaxis'
+ [title]="'Product Analysis'">
+  <e-series-collection>
+      <e-series [dataSource]='chartData' 
+      type='Line' xName='ProductCode' yName='Expense' name='Expenses'></e-series>
+      <e-series [dataSource]='chartData' 
+      type='Line' xName='ProductCode' yName='Units' name='Units'></e-series>
+  </e-series-collection>
+</ejs-chart>`

@@ -1,0 +1,8 @@
+`<ejs-chart id="chart-container" [primaryXAxis]='primaryXaxis' [title]="'Man hour analysis'">
+  <e-series-collection>
+      <e-series [dataSource]='chartData' 
+      type='Line' xName='month' yName='hours' name='ManHours'></e-series>
+      <e-series [dataSource]='chartData' 
+      type='Line' xName='month' yName='hours2' name='ManHours2'></e-series>
+  </e-series-collection>
+</ejs-chart>`

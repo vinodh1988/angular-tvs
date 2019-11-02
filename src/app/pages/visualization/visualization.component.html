@@ -1,3 +1,13 @@
-<p>
-  visualization works!
-</p>
+<h1>First Chart</h1>
+<app-firstchart></app-firstchart>
+<ag-grid-angular 
+    style="width: 600px; height: 800px" 
+    class="ag-theme-balham"
+    [rowData]="rows"
+    [columnDefs]="cols"
+   
+    rowSelection="multiple"
+>
+</ag-grid-angular>
+<h1>Product Chart</h1>
+<app-productchart></app-productchart>

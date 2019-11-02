@@ -15,7 +15,10 @@ projects:project[];
 
   ngOnInit() {
      this.ps.getProjects().subscribe(
-       (data:project[])=>this.projects=data,
+       (data:project[])=>{
+         this.projects=data;
+         this.ps.current=data;
+        },
        ()=>this.projects=[]
      );
   }
